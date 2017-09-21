@@ -1,0 +1,142 @@
+一、项目初始化
+	git init
+	git add *****文件
+	git commit -m "first commit"
+	git remote add origin http://192.168.35.195:3000/li6569049/laravel_project.git
+	git push -u origin master
+
+二、查看当前分支
+	git branch 
+
+三、查看所有分支
+	git branch -r
+
+四、创建分支
+	git branch 分支名
+	git checkout -b 分支名 （此命令会创建且切换到该分支）
+
+五、切换分支
+	git checkout 分支名 
+
+六、提交到分支
+	git push -u origin 分支名
+
+七、
+	在GIT 2.0中，simple将会是push.default的默认值。simple只会推送本地当前分支。
+
+	使用git config --global push.default simple  之后可直接使用git push上传
+
+八、合并分支并提交
+	git merge 分支名
+	git push
+	在切换到mater   
+	git pull之后就是全新的模块
+
+九、冲突解决
+	当提交有类似提示时  ![rejected] master -> master
+
+	第一步 git pull
+		提示有Auto-merging
+		查看冲突文件，显示那一段的代码有冲突
+		类似
+		1111111
+		<<<<<<< HEAD
+		3333333	// 这是本地的代码
+		========
+		22222222  //这边为服务器上的代码
+		>>>>>>>> 3414532453245745785667123
+
+	第二步
+		选择一个版本，见另一个版本删掉
+		此时可以git commit -m 了
+
+十、查看当前的状态
+	git status
+
+十一、查看版本
+	git commit
+
+十二、查看所用的版本
+	git log
+
+十三、切换版本
+	git checkout 版本的hash字段
+
+十四、
+	比如：新来的同事，把别人的代码弄丢了。把本地的版本恢复到之前的版本。
+	git log
+	git reset --hard [commit编号]
+	git reflog 会列出当前版本之前的版本号
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	　Git基本常用命令如下：
+
+　　mkdir：         XX (创建一个空目录 XX指目录名)
+
+　　pwd：          显示当前目录的路径。
+
+　　git init          把当前的目录变成可以管理的git仓库，生成隐藏.git文件。
+
+　　git add XX       把xx文件添加到暂存区去。
+
+　　git commit –m “XX”  提交文件 –m 后面的是注释。
+
+　　git status        查看仓库状态
+
+　　git diff  XX      查看XX文件修改了那些内容
+
+　　git log          查看历史记录
+
+　　git reset  --hard HEAD^ 或者 git reset  --hard HEAD~ 回退到上一个版本
+
+　　(如果想回退到100个版本，使用git reset –hard HEAD~100 )
+
+　　cat XX         查看XX文件内容
+
+　　git reflog       查看历史记录的版本号id
+
+　　git checkout -- XX  把XX文件在工作区的修改全部撤销。
+
+　　git rm XX          删除XX文件
+
+　　git remote add origin https://github.com/tugenhua0707/testgit 关联一个远程库
+
+　　git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库
+
+　　git clone https://github.com/tugenhua0707/testgit  从远程库中克隆
+
+　　git checkout –b dev  创建dev分支 并切换到dev分支上
+
+　　git branch  查看当前所有的分支
+
+　　git checkout master 切换回master分支
+
+　　git merge dev    在当前的分支上合并dev分支
+
+　　git branch –d dev 删除dev分支
+
+　　git branch name  创建分支
+
+　　git stash 把当前的工作隐藏起来 等以后恢复现场后继续工作
+
+　　git stash list 查看所有被隐藏的文件列表
+
+　　git stash apply 恢复被隐藏的文件，但是内容不删除
+
+　　git stash drop 删除文件
+
+　　git stash pop 恢复文件的同时 也删除文件
+
+　　git remote 查看远程库的信息
+
+　　git remote –v 查看远程库的详细信息
+
+　　git push origin master  Git会把master分支推送到远程库对应的远程分支上
+	

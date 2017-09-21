@@ -1,0 +1,154 @@
+git config --global user.name "your name"
+git config --global user.email "email@example.com"
+
+git操作身份，不加则为当前库配置身份
+
+    --local  本地
+    --global 全局
+    --system 系统
+
+
+
+git 可以追踪工作区变化
+
+  红色  绿色  
+
+git add --all
+git add .  所有修改
+
+git commit 回车 
+
+git commit -m ""
+
+
+git diff filename   查看工作区和库文件区别
+
+
+git log  查看日志  版本信息
+
+git log --pretty=oneline
+
+
+回退
+
+   git reset --hard HEAD^ 回退上一个版本
+
+   git reset --hard HEAD^^ 回退上两个版本
+
+   git reset --hard HEAD~n 回退上n个版本
+
+
+   git reset --hard commitID  回退指定版本 committid 根据log获取
+
+
+
+撤消修改  *****
+
+   git checkout --  1.php      //没添加至缓存区的情况
+
+   git checkout HEAD 1.php     //撤回添加至缓存区的修改
+
+
+删除文件控制
+
+   先删除工作区文件
+
+   git rm filename   删除版本库文件
+
+
+
+远程仓库
+
+	github
+
+        开源中国  http://git.oschina.net
+
+
+git remote -v   查看有哪些远程
+
+git remote add origin git@github.com:h2o/learngit.git
+
+git remote -v 再次查看是否成功
+
+
+git push  -u origin master
+
+yes
+
+失败
+
+SSH
+
+ssh-keygen -t rsa
+
+应该有三个文件， 将公钥复制
+
+查看公钥
+cat ~/.ssh/id_rsa.pub
+
+添加后，在终端（Terminal）中输入
+ssh -T git@git.oschina.net
+
+若返回Welcome to Git@OSC, yourname!
+则证明添加成功。
+
+
+个人推拉
+
+推  git push learngit master
+
+拉   git pull learngit master
+
+
+
+分支 
+
+ git checkout -b dev   //创建并切换到 dev 分支
+
+ git checkout -b dev origin/dev   拉取远端分支
+
+ git branch       // 查看当前分支
+
+ git branch -a      // 查看远程分支
+
+ git push origin --delete dev  //删除远程分支
+
+ git checkout master   //切换分支
+
+
+ git merge  dev      // 把dev分支上的内容,合并到当前分支
+
+
+冲突
+
+  git diff filename
+
+  
+分支管理策略
+
+
+
+忽略文件
+ 
+   工作区某些文件不控制版本,请忽略
+
+    方法一: 添加忽略文件名至 /.git/info/exclude 文件中
+    方法二: 在工作区生成.gitignore文件,将忽略文件写入.
+    注意: 方法二仅对后生成的文件有效,如果文件已存在,需要再加
+
+
+GitHub的世界
+
+   了解开源世界的著名项目,并参与其中,先找到开源项目fork回来,
+
+   然后可以clone到本地,修改完毕后可以将修改提交到远程仓库,然后pull requests 给源项目,等待合并.
+
+
+更好的分享已有的代码和算法 
+
+为开发者提供一个最好的成长平台
+
+Scott Chacon 在 GitHub 上托管了一本关于 Git 的书籍 Progit，在发布的一个月内就开始有分支出现，三年后的现在，这本书已经拥有 647 个分支，被翻译成 10 种语言，另有 10 种语言的译本正在进行中。
+
+
+这年头，不去GitHub或者GitCafe上托管几行代码，都不好意思说是自己是程序员。
